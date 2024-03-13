@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<link rel="icon" href="images/logo.png">
+		<title>Plag'Advisor - 主页</title>
+		<meta charset="utf-8">
+		<meta name="description" content="我们提供一个链接到一个应用程序的网站，该应用程序汇集了多个选项卡，包括海滩评级、实时网络摄像头、带有风险和危险的海滩天气、志愿者的海滩清洁服务以及许多其他服务。">
+		<meta name="author" content="24 小时开始 - 第 13 组">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+        </style>
+	</head>
+	<body>
+		<!-- HEADER -->
+		<div class="container">
+		    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+		    	<a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+		        	<img class="bi me-2" src="images/logo.png" height="50" width="50" alt="Logo Plag'Advisor">
+		        	<span class="fs-4">Plag'Advisor</span>
+		      	</a>
+		      	<ul class="nav nav-pills">
+					<li class="nav-item"><a href="index_chi.html" class="nav-link active bg-info bg-gradient" aria-current="page">地图</a></li>
+					<li class="nav-item"><a href="benevole_chi.html" class="nav-link" aria-current="page">志愿服务</a></li>
+					<li class="nav-item" style="padding-right: 10px;"><a class="text-muted" href="index.html" target="_blank"><img src="images/flag-fr.png" height="34" width="34" alt="Français"></a></li>
+					<li class="nav-item"><a class="text-muted" href="index_en.html" target="_blank"><img src="images/flag-en.png" height="34" width="34" alt="English"></a></li>
+					<li class="nav-item" style="padding-left: 10px;"><a class="text-muted" href="index_chi.html" target="_blank"><img src="images/flag-chi.jpg" height="38" width="38" alt="中国人"></a></li>
+		      	</ul>
+		    </header>
+	  	</div>
+
+	  	<!-- CONTENU -->
+		<div class="text-center content-center" id="map" style="width: 100%; height: 75vh; border: 1px solid #ccc;">
+            <script>
+                const map = L.map('map').setView([48.6845, -2.0380], 9);
+
+                const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                const StMaloSillon = L.marker([48.6547, -2.0110]).addTo(map)
+                    .bindPopup('<b>圣马洛 (35)</b><br /><a href="stmalo_sillon_chi.html">西隆海滩</a>');
+
+				const StMaloEventail = L.marker([48.6527, -2.0224]).addTo(map)
+                    .bindPopup('<b>圣马洛 (35)</b><br />范海滩');
+
+				const StMaloLaHoguette = L.marker([48.6602, -1.9977]).addTo(map)
+                    .bindPopup('<b>圣马洛 (35)</b><br />霍盖特海滩');
+
+				const StMaloRochebonne = L.marker([48.6649, -1.9909]).addTo(map)
+                    .bindPopup('<b>圣马洛 (35)</b><br />罗什博讷海滩');
+
+				const StMaloMinihic = L.marker([48.6702, -1.9864]).addTo(map)
+                    .bindPopup('<b>圣马洛 (35)</b><br />米尼希克海滩');
+
+				const StMaloPont = L.marker([48.6744, -1.9837]).addTo(map)
+                    .bindPopup('<b>圣马洛 (35)</b><br />庞特海滩');
+
+				const StMaloFort = L.marker([48.67810 -1.98720]).addTo(map)
+                    .bindPopup('<b>圣马洛 (35)</b><br />湾堡');
+
+				const StMaloVarde = L.marker([48.68162, -1.98617]).addTo(map)
+                    .bindPopup('<b>圣马洛 (35)</b><br />瓦德海滩');
+				
+            </script>
+		</div>
+
+		<!-- FOOTER -->
+		<div class="container">
+	  		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+	    		<div class="col-md-8 d-flex align-items-center">
+					<span class="text-muted">&copy; 2024 - Plag'Advisor - <a href="mentions.html" > 法律声明</a></span>
+	    		</div>
+
+		    	<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+					<span class="text-muted">我们的社交网络： </span>
+				<li class="ms-3"><a class="text-muted" href="https://instagram.com/" target="_blank"><img src="images/insta_icon.png" height="32" width="32" alt="Instagram"></a></li>
+				<li class="ms-3"><a class="text-muted" href="https://tiktok.com/" target="_blank"><img src="images/tiktok_icon.png" height="32" width="32" alt="TikTok"></a></li>
+		    	</ul>
+		  	</footer>
+		</div>
+	</body>
+</html>
